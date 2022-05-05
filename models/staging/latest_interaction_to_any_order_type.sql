@@ -5,7 +5,7 @@ transactions as (
     select * from {{ ref('stg_transactions')}}
 ),
 
-traffic_to_any_order_type as (
+latest_interaction_to_any_order_type as (
     select 
         a.*, 
         b.interaction_datetime, 
@@ -26,4 +26,4 @@ traffic_to_any_order_type as (
 
         
 )
-select * from traffic_to_any_order_type order by userid
+select * from latest_interaction_to_any_order_type order by userid
