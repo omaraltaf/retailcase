@@ -1,4 +1,11 @@
-with traffic_to_any_order_type as (
+with traffic as (
+    select * from {{ ref('stg_traffic')}}
+), 
+transactions as (
+    select * from {{ ref('stg_transactions')}}
+),
+
+traffic_to_any_order_type as (
     select 
         a.*, 
         b.interaction_datetime, 
