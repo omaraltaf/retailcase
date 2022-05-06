@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: OADB
+    database: retail2022
+    schema: OADB
+    tables:
+      - name: traffic
+      - name: transactions

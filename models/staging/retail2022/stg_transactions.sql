@@ -8,6 +8,6 @@ with transactions as (
         item1_revenue as product1_amount, 
         item2_revenue as product2_amount, 
         item3_revenue as product3_amount
-     from `retail2022.OADB.transactions`
+     from {{ source('OADB', 'transactions') }}
 )
 select * from transactions
