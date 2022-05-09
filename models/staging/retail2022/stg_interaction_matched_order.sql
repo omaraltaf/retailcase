@@ -28,9 +28,9 @@ interaction_matched_order as (
                 c.campaign = a.prod2 or
                 c.campaign = a.prod3 or
                 c.campaign = 'General' or
-                c.campaign is null
+                c.channel = 'Direct'
             )
         )
 )
 
-select * from interaction_matched_order
+select count(prod1)  p1,count(prod2)  p2,count(prod3)  p3 from interaction_matched_order

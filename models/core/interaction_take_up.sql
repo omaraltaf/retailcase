@@ -21,7 +21,8 @@ interaction_take_up as
         b.prod3, 
         b.product1_amount,    
         b.product2_amount,
-        b.product3_amount
+        b.product3_amount,
+        b.order_datetime
     from interactions a left outer join latest_interaction_with_order b on 
         concat(a.userid, a.interaction_datetime)=concat(b.userid, b.interaction_datetime)
     
